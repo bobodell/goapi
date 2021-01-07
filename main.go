@@ -3,6 +3,7 @@ package main
 import (
     "log"
     "net/http"
+    "os"
 )
 
 func home(w http.ResponseWriter, r *http.Request) {
@@ -29,6 +30,10 @@ func home(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
     http.HandleFunc("/", home)
-    log.Fatal(http.ListenAndServe(":8080", nil))
+    log.Fatal(http.ListenAndServe(":"+port, nil))
 }
