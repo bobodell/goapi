@@ -1,1 +1,0 @@
-web: ./bin/goapi $PORT
