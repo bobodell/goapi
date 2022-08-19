@@ -13,7 +13,7 @@ func home(w http.ResponseWriter, r *http.Request) {
     switch r.Method {
     case "GET":
         w.WriteHeader(http.StatusOK)
-        w.Write([]byte(`{"message": "get called"}`))
+        w.Write([]byte(`{"message": "get request made"}`))
     case "POST":
         w.WriteHeader(http.StatusCreated)
         w.Write([]byte(`{"message": "post called"}`))
