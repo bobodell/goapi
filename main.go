@@ -32,7 +32,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "80"
+		port = "8080"
 	}
     http.HandleFunc("/", home)
     log.Fatal(http.ListenAndServe(":"+port, nil))
